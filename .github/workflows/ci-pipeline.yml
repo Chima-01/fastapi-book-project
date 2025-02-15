@@ -25,7 +25,4 @@ jobs:
       
       - name: Run tests
         run: |
-         venv/bin/pytest
-         pytest --maxfail=1 --disable-warnings --tb=short
-
-      
+         venv/bin/pytest --maxfail=1 --disable-warnings --tb=short
