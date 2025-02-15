@@ -129,6 +129,23 @@ The API includes proper error handling for:
 - Invalid genre types
 - Malformed requests
 
+## CI/CD Pipeline
+ 1. Continuous Integration (CI) Pipeline - Runs on pull requests to the main branch.
+   ### Actions:
+     - Checks out the repository.
+     - Sets up Python and a virtual environment.
+     - Installs dependencies from requirements.txt.
+     - Runs pytest to execute all tests.
+     - The pipeline fails if any test fails, preventing merging.
+
+  2. Continuous Deployment (CD) Pipeline - Runs after merging to main.
+    ### Actions
+     - Connects to the server via SSH.
+     - Pulls the latest code from the main branch.
+     - installs dependencies.
+     - Restarts the FastAPI application using systemctl.
+     - Restarts Nginx to serve the latest version of the API.
+
 ## Contributing
 
 1. Fork the repository
